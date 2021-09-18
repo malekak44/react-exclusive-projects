@@ -1,8 +1,8 @@
-import Markdown from "./components/Markdown/Markdown";
+import RandomPerson from "./components/RandomPerson/RandomPerson";
 
 function App() {
   return (
-    <Markdown />
+    <RandomPerson />
   );
 }
 
