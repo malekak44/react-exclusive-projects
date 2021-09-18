@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+body {
+    background-color: #87b5b5;
+}
+
+.markdown {
+    h2 {
+        font-family: Russo One;
+        text-align: center;
+        margin: 2rem auto;
+    }
+
+    .toolbar {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        background-color: #4aa3a3;
+        padding: 0.45rem;
+        border: 1px solid #1d2f2f;
+        box-shadow: 1px 1px 10px 2px #3a5f5f;
+        font-family: Russo One;
+        font-size: 1rem;
+        color: black;
+
+        .icon {
+            width: 25px;
+            margin-left: 5px;
+            display: inline-block;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .fcc-icon {
+            margin-right: 3px;
+            font-size: 1.25rem;
+        }
+
+        .arrows-alt {
+            margin-left: auto;
+            cursor: pointer;
+            transition: color 0.125s ease-in-out;
+
+            &:hover {
+                color: #57e2b1;
+            }
+        }
+    }
+
+    &-editor>textarea,
+    &-preview {
+        background-color: #c0d8d8;
+        border: 1px solid #1d2f2f;
+        box-shadow: 1px 1px 10px 2px #3a5f5f;
+        border-top: none;
+    }
+
+    &-editor {
+        max-width: 600px;
+        margin: 1.125rem auto;
+
+        >textarea {
+            width: 100%;
+            min-height: 200px;
+            margin-bottom: -5px;
+            resize: vertical;
+            outline: none;
+            padding-left: 5px;
+            padding-top: 5px;
+            font-size: 0.875rem;
+        }
+    }
+
+    &-preview {
+        max-width: 800px;
+        margin: 1.25rem auto;
+        min-height: 200px;
+        overflow-wrap: break-word;
+
+        #preview {
+            padding: 0 1rem;
+
+            blockquote {
+                border-left: 3px solid #224b4b;
+                color: #224b4b;
+                padding-left: 5px;
+                margin-left: 25px;
+            }
+
+            >p>code {
+                padding: 3px;
+            }
+
+            code {
+                background: white;
+                font-size: 0.875rem;
+                font-weight: bold;
+            }
+
+            pre {
+                display: block;
+                overflow: auto;
+                background: white;
+                padding: 5px;
+                line-height: 1.2;
+            }
+
+            h1 {
+                border-bottom: 2px solid #224b4b;
+            }
+
+            h2 {
+                border-bottom: 1px solid #224b4b;
+            }
+
+            table {
+                border-collapse: collapse;
+            }
+
+            td,
+            th {
+                border: 2px solid #224b4b;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+
+            img {
+                display: block;
+                max-width: 90%;
+                margin: 2rem auto;
+            }
+        }
+    }
+
+    .maximized {
+        width: 96%;
+        min-height: 100vh;
+
+        textarea {
+            min-height: 95vh;
+            resize: none;
+        }
+    }
+
+    .hide {
+        display: none;
+    }
+}
