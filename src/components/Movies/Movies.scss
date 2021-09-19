@@ -1,0 +1,30 @@
+body {
+    background: #508d5583;
+}
+
+#movies {
+    h1 {
+        color: #324d67;
+        text-align: center;
+        font-size: 2.5rem;
+        margin: 2rem 0;
+    }
+
+    #search-input {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        #search {
+            width: 100%;
+            outline: none;
+            border: transparent;
+            max-width: 600px;
+            background: #fff;
+            padding: 1rem;
+            font-size: 1rem;
+            border-radius: .25rem;
+            color: #324d67;
+        }
+    }
+}

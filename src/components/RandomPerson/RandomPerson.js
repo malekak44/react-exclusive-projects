@@ -50,7 +50,7 @@ const RandomPerson = () => {
     }, []);
 
     return (
-        <main className="random-person" style={{ backgroundColor: `${color}`, color: `${color}` }}>
+        <main id="random-person" style={{ backgroundColor: `${color}`, color: `${color}` }}>
             <div id="person-box">
                 <div id="person-img">
                     <img style={{ backgroundColor: `${color}` }} src={person.image} alt={person.name} />

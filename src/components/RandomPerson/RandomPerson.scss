@@ -1,7 +1,8 @@
-@import url("https://fonts.googleapis.com/css?family=Raleway:400,500");
+body {
+    background: white;
+}
 
-.random-person {
-    font-family: "Raleway", sans-serif;
+#random-person {
     font-weight: 400;
     display: flex;
     justify-content: center;
