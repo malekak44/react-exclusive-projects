@@ -1,0 +1,157 @@
+body {
+    background: hsl(210, 36%, 96%);
+}
+
+#hacker-news {
+    line-height: 1.5;
+    font-size: 0.875rem;
+
+    a {
+        text-decoration: none;
+    }
+
+    h2 {
+        text-transform: capitalize;
+        font-size: 2rem;
+    }
+
+    p {
+        margin-bottom: 1.25rem;
+        color: hsl(209, 34%, 30%);
+    }
+
+    .section {
+        width: 90vw;
+        margin: 0 auto;
+        max-width: 1170px;
+
+        @media screen and (min-width: 992px) {
+            width: 95vw;
+        }
+    }
+
+    .search-form {
+        width: 90vw;
+        max-width: 1170px;
+        margin: 0 auto;
+        margin-top: 5rem;
+        margin-bottom: 3rem;
+    }
+
+    .form-input {
+        width: 100%;
+        border: none;
+        border-bottom: 3px solid hsl(210, 31%, 80%);
+        max-width: 600px;
+        background: transparent;
+        padding: 1rem;
+        font-size: 1rem;
+        color: hsl(209, 34%, 30%);
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        outline: none;
+        margin-top: 1rem;
+    }
+
+    .btn-container {
+        width: 90vw;
+        max-width: 1170px;
+        margin: 0 auto;
+        margin-bottom: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn-container p {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .btn-container button {
+        margin: 1rem;
+        padding: 0.25rem 0.5rem;
+        text-transform: capitalize;
+        font-weight: bold;
+        border-color: transparent;
+        background: salmon;
+        border-radius: 0.25rem;
+        color: #fff;
+        letter-spacing: 0.1rem;
+        cursor: pointer;
+    }
+
+    .btn-container button:disabled {
+        cursor: not-allowed;
+    }
+
+    .spinner-container {
+        position: relative;
+    }
+
+    @keyframes spinner {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .loading {
+        width: 6rem;
+        height: 6rem;
+        margin: 0 auto;
+        margin-top: 10rem;
+        border-radius: 50%;
+        border: 3px solid #ccc;
+        border-top-color: hsl(205, 78%, 60%);
+        animation: spinner 0.6s linear infinite;
+    }
+
+    .stories {
+        width: 90vw;
+        max-width: 1170px;
+        margin: 0 auto;
+        margin-bottom: 5rem;
+        display: grid;
+        gap: 2rem;
+    }
+
+    @media screen and (min-width: 992px) {
+        .stories {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            /* align-items: start; */
+        }
+    }
+
+    .story {
+        background: #fff;
+        border-radius: 0.25rem;
+        padding: 1rem 2rem;
+    }
+
+    .title {
+        line-height: 1.5;
+        margin-bottom: 0.25rem;
+    }
+
+    .info {
+        margin-bottom: 0.5rem;
+        color: hsl(210, 22%, 49%);
+    }
+
+    .read-link {
+        font-size: 0.85rem;
+        margin-right: 0.75rem;
+        text-transform: capitalize;
+        color: hsl(205, 78%, 60%);
+    }
+
+    .remove-btn {
+        background: transparent;
+        color: hsl(360, 67%, 44%);
+        border-color: transparent;
+        cursor: pointer;
+        text-transform: capitalize;
+        font-size: 0.85rem;
+    }
+}
