@@ -6,16 +6,14 @@
 // import Pagination from './components/Pagination/Pagination';
 // import Photos from "./components/Photos/Photos";
 // import HackerNews from "./components/HackerNews/HackerNews";
+// import Quiz from "./components/Quiz/Quiz";
 
-import { AppProvider } from "./components/Quiz/context";
-import Quiz from "./components/Quiz/Quiz";
+import Movies from "./components/Movies/Movies";
 
 
 function App() {
   return (
-    <AppProvider>
-      <Quiz />
-    </AppProvider>
+    <Movies />
   );
 }
 
