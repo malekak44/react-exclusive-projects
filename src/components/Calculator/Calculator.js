@@ -1,38 +1,49 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Calculator.scss';
 
 const Calculator = () => {
-    // const [operator, setOperator] = useState('');
-    const [output, setOutput] = useState(0);
-    const buttonsRef = useRef();
+    const [output, setOutput] = useState('');
 
-    useEffect(() => {
+    const handleClick = (e) => {
+        setOutput(output.concat(e.target.value));
+    }
 
-    }, []);
+    const clear = () => {
+        setOutput('');
+    }
+
+    const calculate = () => {
+        try {
+            // eslint-disable-next-line no-eval
+            setOutput(eval(output).toString());
+        } catch (error) {
+            setOutput("Error");
+        }
+    }
 
     return (
         <main id="calculator-wrapper">
             <div className="calculator">
                 <div className="formulaScreen"></div>
-                <div className="outputScreen" id="display">{output}</div>
-                <div ref={buttonsRef}>
-                    <button className="jumbo ac-btn" id="clear" value="AC">AC</button>
-                    <button id="divide" value="/" className="action-btn">/</button>
-                    <button id="multiply" value="x" className="action-btn">x</button>
-                    <button id="seven" value="7">7</button>
-                    <button id="eight" value="8">8</button>
-                    <button id="nine" value="9">9</button>
-                    <button id="subtract" value="‑" className="action-btn">‑</button>
-                    <button id="four" value="4">4</button>
-                    <button id="five" value="5">5</button>
-                    <button id="six" value="6">6</button>
-                    <button id="add" value="+" className="action-btn">+</button>
-                    <button id="one" value="1">1</button>
-                    <button id="two" value="2">2</button>
-                    <button id="three" value="3">3</button>
-                    <button className="jumbo" id="zero" value="0">0</button>
-                    <button id="decimal" value=".">.</button>
-                    <button id="equals" value="=" className="equal-btn">=</button>
+                <div className="outputScreen">{output || 0}</div>
+                <div>
+                    <button className="jumbo ac-btn" onClick={clear} value="AC">AC</button>
+                    <button onClick={handleClick} value="/" className="action-btn">/</button>
+                    <button onClick={handleClick} value="*" className="action-btn">x</button>
+                    <button onClick={handleClick} value="7">7</button>
+                    <button onClick={handleClick} value="8">8</button>
+                    <button onClick={handleClick} value="9">9</button>
+                    <button onClick={handleClick} value="-" className="action-btn">‑</button>
+                    <button onClick={handleClick} value="4">4</button>
+                    <button onClick={handleClick} value="5">5</button>
+                    <button onClick={handleClick} value="6">6</button>
+                    <button onClick={handleClick} value="+" className="action-btn">+</button>
+                    <button onClick={handleClick} value="1">1</button>
+                    <button onClick={handleClick} value="2">2</button>
+                    <button onClick={handleClick} value="3">3</button>
+                    <button onClick={handleClick} className="jumbo" value="0">0</button>
+                    <button onClick={handleClick} value=".">.</button>
+                    <button onClick={calculate} value="=" className="equal-btn">=</button>
                 </div>
             </div>
         </main>
