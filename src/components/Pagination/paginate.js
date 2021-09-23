@@ -8,6 +8,6 @@ const paginate = (followers) => {
     });
 
     return newFollowers;
-}
+};
 
 export default paginate;

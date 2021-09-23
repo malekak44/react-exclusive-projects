@@ -37,7 +37,7 @@
             background: transparent;
             border-bottom: 3px solid #97c5ab;
         }
-        
+
         .form-input {
             width: 100%;
             color: #97c5ab;
@@ -116,6 +116,11 @@
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
+
+                    h4,
+                    p {
+                        margin: 0;
+                    }
                 }
 
                 &:hover .photo-info {

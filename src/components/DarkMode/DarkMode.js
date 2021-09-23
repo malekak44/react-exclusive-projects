@@ -1,46 +1,39 @@
 import React, { useEffect, useState } from 'react';
-import Article from './Article';
 import './DarkMode.scss';
-import data from './data';
-
-const getStorageTheme = () => {
-    let theme = 'light-theme';
-    if (localStorage.getItem('theme')) {
-        theme = localStorage.getItem('theme');
+import { FaMoon, FaSun } from 'react-icons/fa';
+import coder from './coder.png';
+const getLocalStorage = () => {
+    const theme = localStorage.getItem("darkTheme");
+    if (theme) {
+        return theme;
+    } else {
+        return false;
     }
-    return theme;
 }
 
 const DarkMode = () => {
-    const [theme, setTheme] = useState(getStorageTheme());
+    const [darkTheme, setDarkTheme] = useState(getLocalStorage());
 
-    const toggleTheme = () => {
-        if (theme === 'light-theme') {
-            setTheme('dark-theme');
-        } else {
-            setTheme('light-theme');
-        }
+    if (darkTheme) {
+        document.body.classList.add("dark-theme");
+        document.body.classList.remove("light-theme");
+    } else {
+        document.body.classList.add("light-theme");
+        document.body.classList.remove("dark-theme");
     }
 
     useEffect(() => {
-        document.documentElement.className = theme;
-        localStorage.setItem("theme", theme);
-    }, [theme]);
+        localStorage.setItem("darkTheme", JSON.stringify(darkTheme));
+    }, [darkTheme]);
 
     return (
-        <main id="dark-mode">
-            <nav>
-                <div className="nav-center">
-                    <h1>Theme Changer</h1>
-                    <button className="btn" onClick={toggleTheme}>
-                        toggle
-                    </button>
-                </div>
-            </nav>
-            <section className="articles">
-                {data.map((item) => {
-                    return <Article key={item.id} {...item} />;
-                })}
+        <main id="theme">
+            <div className="header">
+                <h1>Theme Changer</h1>
+                <button className="icon" onClick={() => setDarkTheme(!darkTheme)}>{darkTheme ? <FaSun /> : <FaMoon />}</button>
+            </div>
+            <section id="intro">
+                <img src={coder} alt="coder" />
             </section>
         </main>
     );

@@ -1,7 +1,11 @@
 import markdown from './images/markdown.png';
 import quote from './images/quote.png';
 import person from './images/person.png';
+import photos from './images/photos.png';
+import pagination from './images/pagination.png';
 import movies from './images/movies.png';
+import calculator from './images/calculator.png';
+import dark from './images/dark.png';
 
 const projects = [
     {
@@ -19,38 +23,38 @@ const projects = [
     }, {
         id: 4,
         title: "Photos",
-        image: ''
+        image: photos
     }, {
         id: 5,
         title: "Pagination",
-        image: ''
+        image: pagination
     }, {
         id: 6,
         title: "Movies",
         image: movies
     }, {
         id: 7,
-        title: "Hacker News",
-        image: ''
+        title: "Calculator",
+        image: calculator
     }, {
         id: 8,
         title: "Drum Machine",
         image: ''
     }, {
         id: 9,
-        title: "Calculator",
+        title: "25 + 5 Clock",
         image: ''
     }, {
         id: 10,
         title: "Dark Mode",
-        image: ''
+        image: dark
     }, {
         id: 11,
-        title: "Quiz",
+        title: "Hacker News",
         image: ''
     }, {
         id: 12,
-        title: "25 + 5 Clock",
+        title: "Quiz",
         image: ''
     },
 ]

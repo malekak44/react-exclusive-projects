@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Photos.scss';
 import { FaSearch } from 'react-icons/fa';
 import Photo from './Photo';
-const clientID = `?client_id=${process.env.REACT_APP_ACCESS_KEY}`;
+const clientID = `?client_id=${process.env.REACT_APP_PHOTOS_KEY}`;
 const mainURL = `https://api.unsplash.com/photos/`;
 const searchURL = `https://api.unsplash.com/search/photos/`;
 
@@ -70,27 +70,17 @@ const Photos = () => {
 
     return (
         <main id="photos">
-            <section className='search'>
-                <form className='search-form'>
-                    <input
-                        type='text'
-                        placeholder='search'
-                        value={query}
-                        onChange={(e) => setQuery(e.target.value)}
-                        className='form-input'
-                    />
-                    <button type='submit' className='submit-btn' onClick={handleSubmit}>
-                        <FaSearch />
-                    </button>
+            <section className="search">
+                <form className="search-form" onSubmit={handleSubmit}>
+                    <input type="text" placeholder="search" className="form-input" value={query} onChange={(e) => setQuery(e.target.value)} />
+                    <button type="submit" className="submit-btn"><FaSearch /></button>
                 </form>
             </section>
-            <section className='photos'>
-                <div className='photos-center'>
-                    {photos.map((image, index) => {
-                        return <Photo key={index} {...image} />;
-                    })}
+            <section className="photos">
+                <div className="photos-center">
+                    {photos.map((photo, index) => <Photo key={index} {...photo} />)}
                 </div>
-                {loading && <h1 className='loading'>Loading...</h1>}
+                {loading && <h3 className="loading">Loading...</h3>}
             </section>
         </main>
     );

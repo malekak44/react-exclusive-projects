@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import paginate from './paginate';
 const url = "https://api.github.com/users/torvalds/followers?per_page=100";
 
@@ -18,6 +18,6 @@ const useFetch = () => {
     }, []);
 
     return { loading, data };
-}
+};
 
 export default useFetch;
