@@ -1,15 +1,15 @@
 import React from 'react';
-import Buttons from './Buttons';
-import { AppProvider } from './context';
 import './HackerNews.scss';
-import Search from './Search';
+import { AppProvider } from './context';
+import Buttons from './Buttons';
+import SearchForm from './SearchForm';
 import Stories from './Stories';
 
 const HackerNews = () => {
     return (
         <main id="hacker-news">
             <AppProvider>
-                <Search />
+                <SearchForm />
                 <Buttons />
                 <Stories />
             </AppProvider>

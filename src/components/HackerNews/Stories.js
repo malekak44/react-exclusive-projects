@@ -2,7 +2,11 @@ import React from 'react';
 import { useGlobalContext } from './context';
 
 const Stories = () => {
-    const { hits, removeStory } = useGlobalContext();
+    const { isLoading, hits, removeStory } = useGlobalContext();
+
+    if (isLoading) {
+        return <div className='loading'></div>
+    }
 
     return (
         <section className='stories'>
@@ -35,7 +39,7 @@ const Stories = () => {
                 )
             })}
         </section>
-    );
-};
+    )
+}
 
 export default Stories;

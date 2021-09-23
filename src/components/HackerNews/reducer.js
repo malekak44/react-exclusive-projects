@@ -15,14 +15,14 @@ const reducer = (state, action) => {
         case HANDLE_SEARCH:
             return { ...state, query: action.payload, page: 0 };
         case HANDLE_PAGE:
-            if (action.payload === 'increment') {
+            if (action.payload === "increment") {
                 let nextPage = state.page + 1;
                 if (nextPage > state.nbPages - 1) {
                     nextPage = 0;
                 }
                 return { ...state, page: nextPage };
             }
-            if (action.payload === 'decrement') {
+            if (action.payload === "decrement") {
                 let prevPage = state.page - 1;
                 if (prevPage < 0) {
                     prevPage = state.nbPages - 1;
@@ -31,7 +31,7 @@ const reducer = (state, action) => {
             }
             break;
         default:
-            throw new Error(`no matching "${action.type}" action type`);
+            throw new Error(`No Matching Action ${action.type}`);
     }
 };
 

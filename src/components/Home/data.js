@@ -6,6 +6,7 @@ import pagination from './images/pagination.png';
 import movies from './images/movies.png';
 import calculator from './images/calculator.png';
 import dark from './images/dark.png';
+import hacker from './images/hacker.png';
 
 const projects = [
     {
@@ -51,7 +52,7 @@ const projects = [
     }, {
         id: 11,
         title: "Hacker News",
-        image: ''
+        image: hacker
     }, {
         id: 12,
         title: "Quiz",
