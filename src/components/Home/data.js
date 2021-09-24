@@ -5,8 +5,11 @@ import photos from './images/photos.png';
 import pagination from './images/pagination.png';
 import movies from './images/movies.png';
 import calculator from './images/calculator.png';
+import drum from './images/drum.png';
+// import clock from './images/clock.png';
 import dark from './images/dark.png';
 import hacker from './images/hacker.png';
+// import quiz from './images/quiz.png';
 
 const projects = [
     {
@@ -40,7 +43,7 @@ const projects = [
     }, {
         id: 8,
         title: "Drum Machine",
-        image: ''
+        image: drum
     }, {
         id: 9,
         title: "25 + 5 Clock",
