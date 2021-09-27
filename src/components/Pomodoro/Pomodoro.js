@@ -1,12 +1,25 @@
 import React from 'react';
-import './25+5Clock.scss';
+import Break from './components/Break';
+import Controls from './components/Controls';
+import Session from './components/Session';
+import Timer from './components/Timer';
+import { TimerProvider } from './TimerContext';
+import './Pomodoro.scss';
 
-const Clock = () => {
+export default function Pomodoro() {
+
     return (
-        <div>
-            
-        </div>
+        <main id="pomodoro">
+            <section id="container">
+                <div className="main-title">25 + 5 Clock</div>
+                <TimerProvider>
+                    <Break />
+                    <Session />
+                    <Timer />
+                    <Controls />
+                    <audio id="beep" preload="auto" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"></audio>
+                </TimerProvider>
+            </section>
+        </main >
     );
-};
-
-export default Clock;
+}

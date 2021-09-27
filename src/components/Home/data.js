@@ -6,7 +6,7 @@ import pagination from './images/pagination.png';
 import movies from './images/movies.png';
 import calculator from './images/calculator.png';
 import drum from './images/drum.png';
-// import clock from './images/clock.png';
+import pomodoro from './images/pomodoro.png';
 import dark from './images/dark.png';
 import hacker from './images/hacker.png';
 // import quiz from './images/quiz.png';
@@ -47,7 +47,7 @@ const projects = [
     }, {
         id: 9,
         title: "25 + 5 Clock",
-        image: ''
+        image: pomodoro
     }, {
         id: 10,
         title: "Dark Mode",
