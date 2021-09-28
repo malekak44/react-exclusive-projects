@@ -1,16 +1,18 @@
 @import url("https://fonts.googleapis.com/css?family=Russo+One");
 
-body {
-    font-family: Russo One;
-    user-select: none;
-    background-color: #8d8d8d;
-}
-
 #drum-machine-wrapper {
     display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
+    align-items: center;
+    font-family: Russo One;
+    justify-content: center;
+    background-color: #8d8d8d;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
 }
 
 .inner-container {

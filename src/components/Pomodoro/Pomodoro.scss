@@ -1,18 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 
-body {
-    background: #1e555c;
-}
-
 #pomodoro {
-    font-family: Russo one;
+    display: flex;
+    height: 100vh;
     color: white;
     font-size: 20px;
     text-align: center;
-    display: flex;
-    height: 100vh;
-    justify-content: center;
     align-items: center;
+    background: #1e555c;
+    font-family: Russo one;
+    justify-content: center;
 
     #container {
         .main-title {

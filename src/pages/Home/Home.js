@@ -3,18 +3,20 @@ import projects from './data';
 import { Link } from 'react-router-dom';
 import './Home.scss';
 import girl from './images/girl.jpg';
+import reactjs from './images/reactjs.jpg';
 
 export default function Home() {
-
-
     return (
         <>
             <header className="home-header">
                 <div className="header-content">
                     <div className="text">
+                    <img src={reactjs} alt="react" />
                         <h1>React Exclusive Projects</h1>
-                        <p>These are some of the basic projects of React that I have practiced. Without creating projects you cannot learn any programming language. So Practice is the main thing.</p>
-                        <button className="header-btn">Source Code</button>
+                        <p>These are some of the exclusive projects of React that I have practiced. Without creating projects you cannot learn any technology. These projects cover the intermediate level of ReactJS. And some of my FreeCodeCamp projects are also here. So explore the projects!</p>
+                        <a href="https://github.com/malekak44">
+                            <button className="main-btn">My Github</button>
+                        </a>
                     </div>
                     <img src={girl} alt="girl" />
                 </div>

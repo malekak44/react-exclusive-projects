@@ -11,13 +11,15 @@
 }
 
 #theme {
+    height: 100vh;
     text-align: center;
 
     .header {
         width: 25rem;
         display: flex;
         align-items: center;
-        margin: 3rem auto 2rem;
+        padding-top: 3rem;
+        margin:0 auto 2rem;
         justify-content: space-around;
 
         .icon {
