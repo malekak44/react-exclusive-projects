@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useReducer } from 'react';
-import { DECREASE_VALUE, INCREASE_VALUE, PLAY_PAUSE, RESET_ALL } from './actions';
+import { DECREASE_VALUE, INCREASE_VALUE, PLAY_PAUSE, RESET_ALL, START_TIMER, TOGGLE_TIMER_LABEL } from './actions';
 import reducer from './reducer';
 
 const TimerContext = createContext();
@@ -8,6 +8,8 @@ const initialState = {
     breakValue: 5,
     sessionValue: 25,
     isPaused: true,
+    timerLabel: 'Session',
+    timerValue: 1500,
 }
 
 const TimerProvider = ({ children }) => {
@@ -25,6 +27,14 @@ const TimerProvider = ({ children }) => {
         return dispatch({ type: PLAY_PAUSE })
     }
 
+    const startTimer = (value) => {
+        return dispatch({ type: START_TIMER, payload: value });
+    }
+
+    const toggleTimerLabel = (value) => {
+        return dispatch({ type: TOGGLE_TIMER_LABEL, payload: value });
+    }
+
     const resetAll = () => {
         return dispatch({ type: RESET_ALL });
     }
@@ -33,10 +43,13 @@ const TimerProvider = ({ children }) => {
         <TimerContext.Provider
             value={{
                 ...state,
+                state,
                 increaseValue,
                 decreaseValue,
                 playPause,
-                resetAll
+                startTimer,
+                toggleTimerLabel,
+                resetAll,
             }}>
             {children}
         </TimerContext.Provider>
@@ -47,4 +60,4 @@ export const useTimerContext = () => {
     return useContext(TimerContext);
 }
 
-export { TimerProvider };
+export { initialState, TimerContext, TimerProvider };

@@ -7,7 +7,6 @@ import { TimerProvider } from './TimerContext';
 import './Pomodoro.scss';
 
 export default function Pomodoro() {
-
     return (
         <main id="pomodoro">
             <section id="container">
@@ -17,7 +16,6 @@ export default function Pomodoro() {
                     <Session />
                     <Timer />
                     <Controls />
-                    <audio id="beep" preload="auto" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"></audio>
                 </TimerProvider>
             </section>
         </main >

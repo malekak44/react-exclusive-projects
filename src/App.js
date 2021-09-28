@@ -6,13 +6,13 @@ import {
 // import Home from "./pages/Home/Home";
 import Project from "./pages/Project";
 import Error from "./pages/Error";
-import Quiz from './components/Quiz/Quiz';
+import Pomodoro from "./components/Pomodoro/Pomodoro";
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={Quiz} />
+        <Route exact path="/" component={Pomodoro} />
         <Route exact path="/:project" component={Project} />
         <Route exact path="*" component={Error}/>
       </Switch>
