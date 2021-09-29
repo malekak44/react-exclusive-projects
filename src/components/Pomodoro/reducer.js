@@ -13,7 +13,7 @@ const reducer = (state, action) => {
                     timerValue: (state.sessionValue + 1) * 60
                 };
             }
-            break;
+            return { ...state };
         case DECREASE_VALUE:
             if (action.payload === "break" && state.isPaused) {
                 if (state.breakValue > 1) {
@@ -32,7 +32,7 @@ const reducer = (state, action) => {
                     return { ...state, sessionValue: 1 };
                 }
             }
-            break;
+            return { ...state };
         case PLAY_PAUSE:
             return { ...state, isPaused: !state.isPaused };
         case START_TIMER:

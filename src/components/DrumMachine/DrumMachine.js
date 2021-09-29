@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './DrumMachine.scss';
 import { FaFreeCodeCamp } from 'react-icons/fa';
 import sounds from './data';
 
 const DrumMachine = () => {
-    const [volume, setVolume] = useState("100");
+    const [volume, setVolume] = useState("30");
     const [display, setDisplay] = useState('');
     const [power, setPower] = useState(true);
     const [bank, setBank] = useState(true);
@@ -51,29 +51,45 @@ const DrumMachine = () => {
     const changeBank = () => {
         if (power) {
             setBank(!bank);
-            // bank ? setDisplay("Smooth Piano Kit") : setDisplay("Heater Kit");
-            bank ? setDisplay("Yes") : setDisplay("Nope");
+            bank ? setDisplay("Heater Kit") : setDisplay("Smooth Piano Kit");
         }
     }
 
     useEffect(() => {
-        const keyEvent = window.addEventListener("keydown", (e) => {
-            sounds.filter(sound => {
-                if (sound.key === e.key.toUpperCase()) {
-                    playAudio(sound.key, sound.id)
+        const clickEvent = document.addEventListener("keydown", (e) => {
+            const singleKey = sounds.filter(sd => {
+                if (sd.key === e.key.toUpperCase()) {
+                    const sound = document.getElementById(sd.key);
+                    const pad = document.getElementById(sd.id);
+
+                    if (power) {
+                        sound.currentTime = 0;
+                        sound.play();
+                        setDisplay(sd.id);
+
+                        pad.style.backgroundColor = "orange";
+                        pad.style.boxShadow = "0 3px orange";
+                        setTimeout(() => {
+                            pad.style.backgroundColor = "grey";
+                            pad.style.boxShadow = "3px 3px 5px black";
+                        }, 100);
+                    } else {
+                        pad.classList.remove("inactive");
+                        pad.classList.add("active");
+                        setTimeout(() => {
+                            pad.classList.remove("active");
+                            pad.classList.add("inactive");
+                        }, 100);
+                    }
                 }
-                return sound;
+                return "S";
             });
+
+           return singleKey;
         });
         return () => {
-            window.removeEventListener("keydown", keyEvent);
+            document.removeEventListener("keydown", clickEvent);
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-
-
-    useEffect(() => {
-        console.log(power);
     }, [power]);
 
     return (
@@ -81,7 +97,7 @@ const DrumMachine = () => {
             <div className="inner-container" id="drum-machine">
                 <div className="pad-bank">
                     {sounds.map(sound => <div key={sound.id} className="drum-pad inactive" id={sound.id} onClick={() => playAudio(sound.key, sound.id)}>
-                        <audio className="clip" id={sound.key} src={sound.mp3}></audio>
+                        <audio className="clip" id={sound.key} src={power ? sound.mp3 : '#'}></audio>
                         {sound.key}
                     </div>)}
                 </div>
@@ -91,7 +107,7 @@ const DrumMachine = () => {
                 <div className="controls-container">
                     <div className="control">
                         <p>Power</p>
-                        <div className="select" onClick={() => setPower(!power)}>
+                        <div className="select" onClick={()=>setPower(!power)}>
                             <div className="inner" style={{ float: `${power ? "right" : "left"}` }}></div>
                         </div>
                     </div>
